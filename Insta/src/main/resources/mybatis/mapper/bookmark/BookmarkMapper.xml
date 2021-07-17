@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.insta.comm.mapper.IBookmarkMapper">
+
+	<!-- 사용자가 추가한 즐겨찾기 리스트 -->
+	<select id="userBookList" resultType="com.insta.comm.mapper.PostDto">		
+        select 
+        	concat(files.file_path, files.save_file_name) as file_path, 
+        	files.save_file_name, 
+        	files.original_file_name, 
+        	post.post_num as post_num 
+		from post 
+		join files on post.post_num = files.post_num
+		where 
+			post.board_num = 'B0000001'
+			and files.file_num = 'F001'
+			and post.post_num in (select post_num from bookmark where user_id = #{user_id})
+			and post.is_used = 'Y'
+			order by post_num desc;
+	</select>
+	
+	<!-- 즐겨찾기 추가 -->
+	<insert id="addBookMark">
+		insert into bookmark(bookmark_num, post_num, user_id)
+		value(#{bookmark_num}, #{post_num}, #{user_id})
+	</insert>
+	
+	<!-- 즐겨찾기 번호 최댓값 -->
+	<select id="getBookmarkNum" resultType="String">
+		select ifnull((select concat('M', lpad(substr(max(bookmark_num), 2, 8) + 1, 7, '0')) from bookmark), 'M0000001') as maxPostNo from dual;
+	</select>
+	
+	<!-- 즐겨찾기 삭제 -->
+	<delete id="delBookMark">
+		delete from 
+			bookmark
+		where post_num = #{post_num}
+			and user_id = #{user_id}
+	</delete>
+	
+	<!-- 즐겨찾기한 글인지 확인 -->
+	<select id="isBookMarkPost" resultType="_int">
+		select count(*)
+			from bookmark
+		where user_id = #{user_id}
+			and post_num = #{post_num}
+	</select>
+</mapper>

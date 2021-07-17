@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.insta.comm.mapper.IMemberMapper">
+   
+   <!-- 회원가입 -->
+   <insert id="writeMapper">
+      insert into userinfo (user_id,user_pw,user_name,user_tel,user_gender,user_introduce,user_pho_path, user_email)
+      values (#{param1}, #{param2}, #{param3}, #{param4}, #{param5}, #{param6}, #{param7}, #{param8})
+   </insert>
+   
+   <!-- 아이디 중복검사 -->
+   <select id="checkId" resultType="int">
+   	select count(user_id) from userinfo where user_id = #{user_id}
+	</select>
+	
+	<!-- 이메일 중복검사 -->
+	<select id="checkEmail" resultType="int">
+   	select count(user_email) from userinfo where user_email = #{user_email}
+	</select>
+	
+	<!-- 로그인 중복검사 -->
+	<select id="login" resultType="com.insta.comm.mapper.MemberDto">
+	select  
+		user_id, 
+		user_pw, 
+		user_name, 
+		user_tel, 
+		user_email,
+		user_introduce,
+		user_pho_path, 
+		user_gender
+	from userinfo
+	where user_id = #{user_id} 
+		and user_pw = #{user_pw}
+	</select>
+	
+	
+	<!-- 검색후 아이디 클릭시 넘어가는 화면에 아이디 소개글 사진 반환 -->
+	<select id="get" resultType="com.insta.comm.mapper.MemberDto">
+	select  
+		user_id, 
+		user_introduce,
+		user_pho_path
+	from userinfo
+	where user_id = #{user_id} 
+	</select>
+	
+   
+   <!-- 정보수정 -->
+   <!-- jsp -> name -->
+   <update id="memberUpdate">
+   update userinfo set
+		user_pw = #{user_pw},
+		user_name = #{user_name},
+		user_tel = #{user_tel},
+		user_email = #{user_email},
+		user_pho_path = #{user_pho_path},
+		user_introduce = #{user_introduce}
+	where user_id = #{user_id}
+   </update>
+  
+   <!-- 친구추가 -->
+   <insert id="addFriend">
+	insert into friends(friend_id, user_id)
+	values(#{friend_id}, #{user_id});
+   </insert>
+   
+   <!-- 친구리스트 불러오기 -->
+   <select id="friendList" resultType="com.insta.comm.mapper.MemberDto">
+	select user_id,user_name, user_pho_path
+	from userinfo
+	where user_id in
+	(select friend_id from friends where user_id = #{user_id})
+   </select>
+   
+   <!-- 친구아이디 리스트로 불러오기 -->
+   <select id="friendIdList" resultType="com.insta.comm.mapper.MemberDto">
+	select f.friend_id,f.user_id
+    from userinfo as u
+    join friends as f
+    on u.user_id = f.user_id
+    where u.user_id = #{user_id};
+   </select>
+   
+   <!-- 친구삭제 -->
+   <delete id="deleteFriend">
+	delete from friends
+	where friend_id=#{friend_id};
+   </delete>
+   
+   <!-- 친구 Count -->
+   <select id="countFriend" resultType="int">
+   select count(friend_id) from friends where user_id = #{user_id};
+   </select>
+   
+	<!-- 아이디 찾기 -->
+    <select id="findId" resultType ="String">
+   		select user_id from userinfo where user_email = #{param1}
+	</select>
+	
+	<!-- 비밀번호 찾기 -->
+    <select id="findPw" resultType ="String">
+    	select user_pw from userinfo where user_id = #{param1} and user_email = #{param2}
+	</select>
+	
+	<!-- 아이디, 비밀번호 찾기 : 아이디 카운트해서 0이냐1이냐에 따라 -->
+	<select id="countId" resultType ="Int">
+    	select count(user_pw) from userinfo where user_id = #{param1}
+	</select>
+	
+	<!-- 아이디, 비밀번호 찾기 : 이메일 카운트해서 0이냐1이냐에 따라 -->
+	<select id="countEmail" resultType ="Int">
+    	select count(user_pw) from userinfo where user_email = #{param2}
+	</select>
+	
+	<!-- 검색기능 -->
+	<select id="search" resultType ="com.insta.comm.mapper.MemberDto">
+		select user_id,user_name,user_pho_path from userinfo
+		where user_id Like CONCAT('%',#{user_id},'%') or user_name Like CONCAT('%',#{user_id},'%');
+	</select>
+	
+	
+	
+	
+</mapper>

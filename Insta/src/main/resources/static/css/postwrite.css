@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+
+.postWriteImage{
+	float:left;
+}
+.postWriteContainer2{
+width: 700px;
+    margin-left: 30%;
+    margin-right: 30%;
+    text-align: center;
+    border: dashed;
+    height: 700px;
+}

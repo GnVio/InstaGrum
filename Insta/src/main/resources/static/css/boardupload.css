@@ -1,0 +1,121 @@
+
+.Gw_container{
+	width: 100%;
+	align-items:center;
+}
+
+.post_upload {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 800px;
+    text-align: center;
+    font-size: 30px;
+    align-items: center;
+}
+.font2_style {
+    display: grid;
+    position: relative;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 50px;
+    text-align: center;
+    color: #797979;
+    margin-top: 100px;
+}
+
+.file-upload {
+    display: flex;
+    position: absolute;
+    width: 55%;
+    height: 670px;
+    left: 22%;
+    border: 5px dashed #d8d0ff;
+}
+
+.image-upload-wrap {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: auto;
+    top: 10%;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image_txt {
+    width: 50%;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: -1px;
+    text-align: center;
+    height: 45px;
+    border: none;
+    border-bottom: 1px solid #000;
+    margin-bottom: 15px;
+}
+
+.upload-button {
+    display: block;
+    position: relative;
+    width: 50%;
+}
+
+.file_upload_txt {
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#image_input {
+    width: 65%;
+    font-size: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#image_section {
+    width: 450px;
+    height: 400px;
+    overflow: hidden;
+    object-fit: contain;
+}
+
+.file-uploadbtn {
+    bottom: 8%;
+    position: absolute;
+    width: 100%;
+    right: 21.5%;
+}
+
+.post_upload_button {
+    display: flex;
+    position: absolute;
+    bottom: 2%;
+    justify-content: flex-end;
+    width: 100%;
+    right: 22.5%;
+}
+
+.btn_add_board {
+    display: block;
+    width: 110px;
+    height: 35px;
+    margin-left: 15px;
+    font-size: 22px;
+    font-weight: 545;
+    border: none;
+    background: none;
+    border-bottom: 7px double #4a4a4a;
+}
+
+.btn_add_board:hover{
+	background: rgb(0,0,0);
+	color:#fff;
+}
+
+.article {
+    display: flex;
+}

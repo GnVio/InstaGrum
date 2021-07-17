@@ -1,0 +1,96 @@
+.Pstyle {
+    width: 40%;
+    border: 5px dashed #d5bef3;
+    background-color: #fff;
+}
+
+.b-close {
+    position: absolute;
+    top: -6px;
+    padding-right: 5.5px;
+    display: flex;
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: 600;
+    color: #252525;
+}
+
+.detailCommentBtn {
+    text-align: center;
+    background: #aaacfab8;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    width: 95%;
+}
+
+.hid_comment_box {
+    display: block;
+    position: relative;
+    width: 75%;
+    height: 45px;
+    margin-left: 11px;
+    text-align: center;
+    font-size: 17.5px;
+}
+
+.button_comment_Modi {
+    display: flex;
+    position: relative;
+    width: 9.5%;
+    height: 48px;
+    font-size: 15px;
+    letter-spacing: 5px;
+    text-align: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    border-bottom: 5px double;
+    border-top: 5px double;
+}
+
+.commentList{
+	height: 500px;
+}
+
+
+.like_box{
+	border: none;
+    background: none;
+    font-size: 18px;
+}
+
+.comment_big_box{
+	border:none;
+}
+
+.user_comment {
+    display: flex;
+    position: relative;
+    width: 60%;
+    left: 20%;
+    height: 35px;
+    align-items: center;
+}
+
+.commentList_sub_con {
+    display: flex;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 20px;
+    letter-spacing: 2.5px;
+}
+
+.form-control{
+	height:40px;
+	width:85%;
+	float:left;
+}
+
+.btn{
+	 height: 40px;
+    border: groove;
+}
+   

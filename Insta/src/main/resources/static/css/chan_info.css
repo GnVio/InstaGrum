@@ -1,0 +1,420 @@
+/* 전체영역 */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* 회원정보수정 틀 */
+.container {
+    width: 100%;
+    align-items: center;
+}
+
+.header {
+    width: 100%;
+    height: 80px;
+    background: #fff;
+    border-bottom: 1px solid #000;
+    position: fixed;
+    z-index: 7;
+    top: 0;
+}
+
+.logo {
+    font-family: 'Playball', cursive;
+    text-align: center;
+    font-size: 45px;
+}
+
+#header_logo {
+    float: left;
+    width: 16%;
+    height: 55px;
+    padding: 13px 5px;
+}
+
+/* 검색 */
+.search-box {
+    padding: 5px;
+    position: absolute;
+    top: 20px;
+    left: 60%;
+    height: 35px;
+    background-color: #fff;
+    border: 1px solid #000;
+    transition: 0.4s;
+    width: 20%;
+}
+
+.search-txt {
+    font-size: 15px;
+    width: 60%;
+    border: none;
+    text-align: left;
+    height: 35px;
+    font-weight: 100;
+    margin-left: 5px;
+}
+
+.btn_src {
+    text-decoration: none;
+    float: right;
+    width: 25%;
+    height: 35px;
+    font-size: 15px;
+    border: none;
+    background: #000000;
+    margin-right: 5px;
+    color: #fff;
+}
+
+/* 메뉴 */
+ul li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.sb_txt {
+    text-decoration: none;
+    color: #000000;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+#main_menu {
+    padding: 9px;
+    float: right;
+    width: 15%;
+}
+
+#main_menu > li{
+    position: relative;
+}
+
+#sub_menu {
+    position: absolute;
+    background-color: rgb(255 255 255);
+    width: 50%;
+    height: 340px;
+    margin-top: 7px;
+    padding: 0px 5px;
+    opacity: 0;
+    visibility: hidden;
+    text-decoration: none;
+    margin: 0px 23%;
+    z-index: 2500;
+}
+
+
+#sub_menu > li {
+    padding: 15px 0px;
+    text-align: center;
+    margin: 5px 0px;
+}
+
+#main_menu > li > a {
+    font-size: 25px;
+    color: #222;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 2px;
+    display: flex;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+}
+#sub_menu > li {
+    padding: 15px 0px;
+    text-align: center;
+    margin: 5px 0px;
+}
+
+
+#main_menu > li:hover #sub_menu{
+    opacity: 1;
+    visibility: visible;
+}
+
+#sub_menu > li > a:hover{
+    text-decoration: underline;
+}
+
+
+/* 프로필 틀 */
+
+.chan_profile {
+    display: grid;
+    position: relative;
+    font-size: 45px;
+    font-weight: 100;
+    text-align: center;
+    width: 100%;
+    height: 60px;
+    letter-spacing: 5px;
+    margin: 100px 0px 0px 0px;
+}
+
+/* 회원정보수정 왼쪽/오른쪽 부분 */
+.chan_img {
+    font-size: 13px;
+    color: #5e5e5e;
+}
+
+.frame2 {
+    position: absolute;
+    display: flex;
+    top: 18%;
+    left: 21%;
+    width: 60%;
+    height: 75%;
+    background: #ffffff;
+    border: 5px dashed #d8d0ff;
+}
+
+.center2 {
+    position: relative;
+    display: contents;
+}
+
+.profile2 {
+    display: grid;
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    background: #ffffff;
+    box-sizing: border-box;
+    border-right: 5px dashed #d8d0ff;
+}
+
+.profile3 {
+    display: grid;
+    position: relative;
+    float: left;
+    text-align: center;
+    align-items: center;
+    width: 40%;
+    height: 500px;
+    left: 5%;
+    top: 20%;
+}
+
+.image2 {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin: 60px auto 25px auto;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.profile2 img {
+    display: block;
+    border-radius: 50%;
+    background-color: 5px dashed #d8d0ff;
+}
+
+.chan_none2 {
+    position: relative;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #636363;
+    display: contents;
+    width: 100%;
+    height: 25px;
+}
+
+.chan_none3 {
+    font-size: 20px;
+    letter-spacing: 8px;
+    font-weight: bold;
+    color: #636363;
+    display: contents;
+    width: 100%;
+    height: 25px;
+}
+
+
+.txt_none {
+    font-size: 16px;
+    outline: none;
+    border: none;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: none;
+}
+
+.txt_not_none {
+    display: block;
+    position: relative;
+    font-size: 18px;
+    border: 2.5px solid #000;
+    text-align: center;
+    font-weight: 550;
+    letter-spacing: 3.3px;
+    width: 90%;
+    height: 55px;
+    left: 5%;
+}
+
+.txt_none2 {
+    display: block;
+    position: relative;
+    font-size: 20px;
+    border: none;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    width: 100%;
+    height: 50px;
+    background: none;
+    color: #000;
+    margin-top: -25px;
+}
+
+.actions2 {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 55px;
+    margin: 25px 0px 25px 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn_delete {
+    display: flow-root;
+    width: 33%;
+    height: 45px;
+    margin: 0px 10px 0px 10px;
+    background: none;
+    border-bottom: 5px double #000;
+    font-size: 16px;
+    font-weight: 600;
+    box-sizing: border-box;
+    transition: all .3s ease-in-out;
+    color: rgb(0, 0, 0);
+    letter-spacing: 5px;
+}
+
+.btn_del {
+    display: block;
+    width: 15%;
+    height: 30px;
+    margin-right: 5px;
+    background: #c9d7ff;
+}
+
+.btn_del:hover{
+    background: rgb(49, 49, 49);
+    color: #fff;
+}
+
+.actions1 {
+    display: flex;
+    width: 100%;
+    height: 70px;
+    align-items: baseline;
+    justify-content: center;
+    border-bottom: 5px dashed #d8d0ff;
+}
+
+/* 회원정보수정 오른쪽 부분 */
+.stats {
+ 	float: right;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.info_tilte {
+    width: 90%;
+    height: 35px;
+    display: flex;
+    margin-top: 55px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.info_sub_title {
+    display: flex;
+    width: 30%;
+    font-size: 18px;
+    font-weight: 300;
+    color: #000000;
+	text-align:center;
+}
+
+.info_chan {
+    display: flex;
+    width: 70%;
+}
+
+input.txt_info {
+    width: 100%;
+    text-align: center;
+}
+
+.cheack {
+    border: 0.5px solid #e6e6e6;
+    font-size: 13px;
+    background: #ffffff;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    height: 20px;
+}
+
+.btn_secc {
+    display: flow-root;
+    position: relative;
+    width: 33%;
+    height: 45px;
+    margin: 0px 10px 0px 10px;
+    background: none;
+    border-bottom: 5px double #000;
+    font-size: 16px;
+    font-weight: 600;
+    box-sizing: border-box;
+    transition: all .3s ease-in-out;
+    color: rgb(0, 0, 0);
+    letter-spacing: 5px;
+}
+
+.btn_secc:hover{
+    background: rgb(192, 217, 255);
+    color: rgb(255, 255, 255);
+}
+
+.btn_delete {
+    display: flow-root;
+    width: 33%;
+    height: 45px;
+    margin: 0px 10px 0px 10px;
+    background: none;
+    border-bottom: 5px double #000;
+    font-size: 16px;
+    font-weight: 600;
+    box-sizing: border-box;
+    transition: all .3s ease-in-out;
+    color: rgb(0, 0, 0);
+    letter-spacing: 5px;
+}
+
+
+.btn_delete:hover{
+    background: rgb(244, 210, 255);
+    color: rgb(255, 255, 255);
+}

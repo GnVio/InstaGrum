@@ -1,0 +1,116 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+}
+
+h2{
+    margin-top: -5px;
+}
+
+.loginForm{
+    position: absolute;
+    width: 400px;
+    height: 700px;
+    padding: 30px 20px;
+    background-color: #ffffff6b;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+
+.loginForm img{
+    margin: 23px;
+    width: 300px;
+    height: 130px;
+    align-items: center;
+}
+
+.For_pass_Form{
+    border-bottom: 3px solid #5e5e5e;
+    margin: 25px;
+    padding: 10px 10px;
+}
+
+.txt_for_name{
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #000000;
+    font-size: 18px;
+    height: 25px;
+    background: none;
+}
+
+.txt_for_id{
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #000000;
+    font-size: 18px;
+    height: 25px;
+    background: none;
+}
+
+.txt_for_email{
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #000000;
+    font-size: 18px;
+    height: 25px;
+    background: none;
+}
+
+
+.btn_chan{
+    position: relative;
+    left: 40%;
+    transform: translateX(-50%);
+    margin-bottom: 40px;
+    width: 80%;
+    height: 40px;
+    background: linear-gradient(270deg,#ffffff,#393232,#ffffff);
+    background-position: center;
+    background-size: 500%;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.4s;
+    display: inline; 
+    font-size: 14px;
+} 
+
+.btn:hover{
+    background-position: right;
+}
+
+hr{
+    border: 2px solid #000;
+}
+
+.bottomText{
+    margin: 10px;
+    padding: 10px 10px;
+}
+
+.link_color{
+    font-size: 13px;
+    color: #000;
+}
+
+h4{
+    font-size: 17px;
+    color: #000;
+}
+
+.foot{
+    margin: 5%;
+}
+.foot_text{
+    font-size: 12px;
+    color: #676767;
+}

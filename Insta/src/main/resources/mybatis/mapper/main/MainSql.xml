@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.insta.comm.mapper.IMainMapper">
+
+	<!-- 사용자 정보 보여주기 -->
+	<select id="mainView" resultType="com.insta.comm.mapper.MainDto">
+		select user_id, user_name, user_introduce, user_pho_path from userinfo
+		where user_id = #{user_id}
+	</select>
+	
+	<!-- 사용자의 총 글 갯수 -->
+	<select id="totlaBoardCnt" resultType="_int">
+   		select count(*) from post where user_id = #{user_id}
+   		and is_used = "Y"
+   </select> 
+   
+   <!-- 글에 작성되어 있는 댓글 리스트 -->
+    <select id="commentList" resultType = "com.insta.comm.mapper.CommentDto">
+   		select 
+   			c.user_id,
+   			c.comment_num,
+   			c.comment_content, 
+   			u.user_name
+		from comment as c
+		join userinfo as u on u.user_id = c.user_id
+		where c.is_used = "Y"
+		and c.post_num = #{post_num}
+	</select>
+	
+	<!-- 선택한 댓글가져오기 -->
+	<select id="selectComment" resultType = "com.insta.comm.mapper.CommentDto">
+		select 
+			post_num, 
+			comment_num, 
+			user_id, 
+			comment_content, 
+			update_date 
+		from comment
+		where post_num=#{post_num}
+		and comment_num = #{comment_num}
+	</select>
+	
+	<!-- 하나의 글에 작성되어 있는 댓글의 최댓값 -->
+	<select id="getMaxCommentNo" resultType="String">
+	select ifnull((select concat('C', lpad(substr(max(comment_num), 2, 8) + 1, 3, '0')) from comment where post_num = #{post_num}), 'C001') as maxCommentNo from dual
+	</select>
+	
+	<!-- 댓글 작성 -->
+	<insert id="insertComment">
+		insert into comment(post_num,comment_num,user_id,comment_content)
+		values(#{post_num},#{comment_num},#{user_id},#{comment_content})
+	</insert>	
+	
+	<!-- 댓글 삭제 -->
+	<update id="deleteComment">
+		update 
+			comment set is_used = 'N'
+		where post_num = #{post_num}
+			and comment_num = #{comment_num}
+	</update>
+	
+	<!-- 댓글 수정 -->
+	<update id="updateComment">
+		update 
+			comment set comment_content = #{comment_content},
+        update_date = sysdate()
+		where post_num = #{post_num}        
+			and comment_num = #{comment_num}
+	</update>
+	
+	<!-- 사용자가 작성한 글 리스트 -->
+	<select id="userBoardList" resultType="com.insta.comm.mapper.PostShowFile">
+		select 
+			concat(files.file_path, files.save_file_name) as file_path, 
+			files.save_file_name, 
+			files.original_file_name, 
+			post.post_num as post_num		 
+		from post 
+		join files on post.post_num = files.post_num
+		where post.board_num = 'B0000001'
+			and files.file_num = 'F001'
+			and post.is_used = 'Y'
+			and user_id = #{user_id}
+			order by post_num desc
+	</select>
+	
+</mapper>

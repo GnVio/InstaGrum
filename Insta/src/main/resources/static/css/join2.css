@@ -1,0 +1,132 @@
+/* 회원가입 틀  */
+.join_start {
+	overflow:hidden;
+    position: absolute;
+    width: 35%;
+    height: 1000px;
+    padding: 10px 20px;
+    text-align: center;
+    left: 28%;
+    box-shadow: 0px 0px 5px 5px #dcdcdc;
+    top: 2%;
+}
+
+/* 회원가입 헤더_ 로고, 설명 부분 */
+.header_img_logo {
+    position: relative;
+    display: block;
+    text-align: center;
+}
+
+/* 이미지 관련 */
+.select_img {
+    display: block;
+    border-radius: 50%;
+    background-color: #f5e8df;
+}
+/* 이미지 관련 */
+/* .img_upload{
+	opacity: 0;
+} */
+
+
+.join_header {
+    border-bottom: 1px solid;
+}
+
+img.insta_logo {
+    width: 50%;
+    height: 130px;
+    margin: 5px 10px 10px 10px;
+}
+
+.header_sub_title {
+    margin-top: -5px;
+    font-weight: 400;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+}
+
+/* 회원가입 유저 정보 입력 부분 */
+.join_write_info {
+    display: block;
+    position: relative;
+    margin: 10px 10px 10px 10px;
+    width: 97%;
+    height: 700px;
+}
+
+.join_img_con {
+    position: relative;
+    width: 35%;
+    display: grid;
+    float: left;
+}
+
+.join_user_info {
+    position: relative;
+    display: grid;
+    width: 60%;
+    float: right;
+}
+
+.font4_style {
+    text-align: left;
+    margin: 0px 5px 5px 5px;
+}
+
+.txt_info {
+    width: 90%;
+    height: 35px;
+    margin-bottom: 15px;
+}
+
+.test_pass {
+	pointer-events: none;
+	padding : 0px;
+    margin-top: -30px;
+    margin-bottom: 0px;
+    border : none;
+    color: #f44336;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+/* 회원가입 하단 가입하기 버튼 부분  */
+.join_btn_box {
+	
+    text-align: justify;
+   	border-top: 1px solid #000;
+   	margin : 5px;
+}
+
+.btn_insta_start {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 25px;
+    width: 65%;
+    height: 40px;
+    background: linear-gradient(
+270deg
+,#ffffff,#000000,#ffffff);
+    background-position: center;
+    background-size: 500%;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.4s;
+    display: inline;
+    font-size: 20px;
+    margin-top: 35px;
+}
+
+.btn_insta_start:hover{
+    background-position: right;
+    color: #000;
+}
+
+.afont_style {
+    text-decoration: none;
+}
